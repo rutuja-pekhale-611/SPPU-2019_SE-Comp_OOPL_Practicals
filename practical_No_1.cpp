@@ -13,7 +13,7 @@ using namespace std;
 class Complex                      
     {
         double realNo;       
-        double imgNO;
+        double imgNo;
         public: 
         friend istream & operator >> (istream &, Complex &); 
         Complex();            
