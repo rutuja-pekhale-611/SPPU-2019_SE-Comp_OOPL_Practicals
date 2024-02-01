@@ -10,44 +10,44 @@ Implement a class Complex which represents the Complex Number data type. Impleme
 
 # include<iostream>
 using namespace std;
-class Complex                       //decaring Class Complex
+class Complex                      
     {
-        double real;       
-        double img;
+        double realNo;       
+        double imgNO;
         public: 
-        friend istream & operator >> (istream &, Complex &); // Input 
-        Complex();            // Default Constructor
-        friend ostream & operator << (ostream &, const Complex &); // Output
-        Complex operator + (Complex); // Addition
-        Complex operator * (Complex); // Multiplication
+        friend istream & operator >> (istream &, Complex &); 
+        Complex();            
+        friend ostream & operator << (ostream &, const Complex &); 
+        Complex operator + (Complex); 
+        Complex operator * (Complex); 
     };
-    Complex::Complex()                 // Default Constructor 
+    Complex::Complex()                  
     {
-        real = 0;
-        img = 0;
+        realNo = 0;
+        imgNo = 0;
     }
     istream & operator >> (istream &, Complex & i)
     {
-        cin >> i.real >> i.img;
+        cin >> i.realNo >> i.imgNo;
         return cin;
     }
     ostream & operator << (ostream &, const Complex & d)
     {
-        cout << d.real << " + " << d.img << "i" << endl;
+        cout << d.realNo << " + " << d.imgNo << "i" << endl;
         return cout;
     }
-        Complex Complex::operator + (Complex c1)   // Overloading + operator
+        Complex Complex::operator + (Complex c1)  
     {
     Complex temp;
-    temp.real = real + c1.real;
-    temp.img = img + c1.img;
+    temp.realNo = realNo + c1.realNo;
+    temp.imgNo = imgNo + c1.imgNo;
     return temp;
      }
-    Complex Complex::operator * (Complex c2)   // Overloading * Operator
+    Complex Complex::operator * (Complex c2)    
     {
         Complex tmp;
-        tmp.real = real * c2.real - img * c2.img;
-        tmp.img = real * c2.img + img * c2.real;
+        tmp.realNo = realNo * c2.realNo - imgNo * c2.imgNo;
+        tmp.imgNo = realNo * c2.imgNo + imgNo * c2.realNo;
         return tmp;
     }
     int main()
